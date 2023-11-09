@@ -4,13 +4,14 @@ namespace app\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 
-class ProductsController
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,16 +24,13 @@ class ProductsController
         return view('products.index', compact('products'));
     }
 
-<<<<<<< HEAD
+
 
     public function search()
-=======
-    public function explore()
     {
         $products = Product::all();
-        return view('products.explore', compact('products'));
+        return \view('products.index' , compact('products'));
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -40,7 +38,7 @@ class ProductsController
      * @return Application|Factory|View|Response
      */
     public function create()
->>>>>>> 146d422246fe7748a0a67dd9c732847a8efcd566
+
     {
         $tags = \App\Models\Tag::all();
         $products = Product::all();

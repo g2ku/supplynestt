@@ -1,9 +1,4 @@
-@extends('base')
-
-
-@section('content')
-
-    @extends('base')
+ @extends('base')
 
 
     @section('content')

@@ -1,8 +1,7 @@
 <?php
 
-use app\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [ProductsController::class, 'index'])->name('home');
+Route::get('/products.index', [ProductsController::class, 'index']) ->name('index');
 Route::get('/products/search', [ProductsController::class, 'search'])->name('products.search');
 Route::get('/products/customer', [ProductsController::class, 'customer'])->name('products.customer');
 Route::post('/send-email', [\App\Http\Controllers\EmailController::class, 'sendEmail'])->name('send.email');

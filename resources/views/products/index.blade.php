@@ -3,7 +3,7 @@
 
 @section('content')
 
-<<<<<<< HEAD
+
     <style>
         .supplynest
         {
@@ -129,15 +129,7 @@
             width: 1px;
             height: 1px;
         }
-=======
-    <div style="padding-bottom: 30px;">
-        <div class="row-cols-2">
-            <a href="{{route('products.index')}}" type="text" class="home">
-                Home
-            </a>
 
-        </div>
->>>>>>> 146d422246fe7748a0a67dd9c732847a8efcd566
 
         /* Active state */
         .search-bar input:focus + .search-btn,
@@ -166,7 +158,6 @@
             body, input {
                 color: #f1f1f1;
             }
-<<<<<<< HEAD
             body {
                 background: #ffffff;
             }
@@ -586,19 +577,27 @@
 
     <a href="{{route('products.index')}}" class="supplynest">SupplyNest</a>
 
-    <div class="links-header">
+    <div style="padding-bottom: 30px;">
+        <div class="row-cols-2">
+            <a href="{{route('products.index')}}" type="text" class="home">
+                Home
+            </a>
+        </div>
+    </div>
+
+        <div class="links-header">
         <a href="{{route('products.about')}}" class="about_us_header">About Us</a>
         <a href="{{route('products.search')}}" class="products">Products</a>
         <a href="{{route('products.trending')}}" class="trend">Trending</a>
         <a href="{{route('products.customer')}}" class="customer">Customer Service</a>
-=======
+
         </style>
 
         <h1>All products</h1>
         <a href="{{route('products.create')}}" type="button" class="btn btn-outline-primary">
             Add product
         </a>
->>>>>>> 146d422246fe7748a0a67dd9c732847a8efcd566
+
     </div>
     <div class="header_png"><img src="https://img.freepik.com/premium-photo/group-of-diverse-occupation-people-smile_333547-13644.jpghttps://img.freepik.com/premium-vector/a-group-of-people-in-different-professions_36082-609.jpg?w=2000"
          class="main_img"></div>
@@ -697,51 +696,5 @@
             </div>
         </div>
     </footer>
-
-<<<<<<< HEAD
-
-=======
-    <table class="table" style="padding-top: 30px">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Description</th>
-            <th scope="col">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($products as $product)
-            <tr>
-                <th scope="row">{{$product->id}}</th>
-                <td>
-                    <a href="{{route('products.show', ['product' => $product])}}">
-                        {{$product->name}}
-                    </a>
-                </td>
-                <td>
-                    {{$products->price}}
-                </td>
-
-                <td>
-                        {{$product->description}}
-                </td>
-                <td>
-                    <a href="{{route('products.edit', ['product' => $product])}}" class="btn btn-outline-primary">
-                        Edit
-                    </a>
-                    <form method="post" action="{{route('products.destroy', ['product' => $product])}}">
-                        @method('delete')
-                        @csrf
-                        <button type="submit" class="btn btn-outline-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
->>>>>>> 146d422246fe7748a0a67dd9c732847a8efcd566
-
 
 @endsection
